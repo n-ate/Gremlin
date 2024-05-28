@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/n-ate/Gremlin</PackageProjectUrl>
+    <Description>Package assists in serializing, deserializing, and querying complex gremlin json</Description>
+    <Copyright>2023</Copyright>
+    <RepositoryUrl>https://github.com/n-ate/Gremlin.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>gremlin;serialize;deserialize;serialization;deserialization;json</PackageTags>
+    <Version>8.0.0</Version>
+    <Authors>n-ate</Authors>
+    <Company>n-ate</Company>
+    <PackageReadmeFile>nuGet.md</PackageReadmeFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;DebugVerbose</Configurations>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion></FileVersion>
+    <Title>n-ate Gremlin</Title>
+    <PackageIcon>icon.jpg</PackageIcon>
+    <Nullable>enable</Nullable>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+    <!--<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>true</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>true</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>true</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>true</GenerateAssemblyInformationalVersionAttribute>
+    <AssemblyVersion>$(PackageVersion).*</AssemblyVersion>
+    <FileVersion>$(PackageVersion).*</FileVersion>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugVerbose|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Converters\**" />
+    <Compile Remove="Decompiled\**" />
+    <Compile Remove="Models\ArrayResult\**" />
+    <EmbeddedResource Remove="Converters\**" />
+    <EmbeddedResource Remove="Decompiled\**" />
+    <EmbeddedResource Remove="Models\ArrayResult\**" />
+    <None Remove="Converters\**" />
+    <None Remove="Decompiled\**" />
+    <None Remove="Models\ArrayResult\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BetterArrayConverter.cs" />
+    <Compile Remove="BetterObjectDefaultConverter.cs" />
+    <Compile Remove="BetterPreserveReferenceHandler.cs" />
+    <Compile Remove="DynamicTypes.cs" />
+    <Compile Remove="Contracts\IEntity.cs" />
+    <Compile Remove="Contracts\IGremlinEntity.cs" />
+    <Compile Remove="Contracts\IGremlinItem.cs" />
+    <Compile Remove="Contracts\IGremlinRelationship.cs" />
+    <Compile Remove="Contracts\IItem.cs" />
+    <Compile Remove="Contracts\IJacket.cs" />
+    <Compile Remove="Contracts\IRelationship.cs" />
+    <Compile Remove="JsonBuilder.cs" />
+    <Compile Remove="JsonRegex.cs" />
+    <Compile Remove="Models\Entity.cs" />
+    <Compile Remove="Models\GremlinEntity.cs" />
+    <Compile Remove="Models\GremlinItem.cs" />
+    <Compile Remove="Models\GremlinRelationship.cs" />
+    <Compile Remove="Models\Jacket.cs" />
+    <Compile Remove="Models\Jacket.NONE.cs" />
+    <Compile Remove="Models\LongFormPropertyCollection.cs" />
+    <Compile Remove="Models\Relationship.cs" />
+    <Compile Remove="MyBinder.cs" />
+    <Compile Remove="Serializer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExRam.Gremlinq.Providers.CosmosDb" Version="11.2.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="n-ate.Essentials" Version="8.0.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Files.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Files.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Files.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Files.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
