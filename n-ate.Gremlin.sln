@@ -6,13 +6,17 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution items", "{3B3AC312-5700-42F0-8379-8DEFBA79C67A}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		ci\gremlin-serialization.nuget.cicd.yml = ci\gremlin-serialization.nuget.cicd.yml
 		.nuGet\nuGet.config = .nuGet\nuGet.config
-		.nuGet\nuGet.md = .nuGet\nuGet.md
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "n-ate.Gremlin", "Gremlin\n-ate.Gremlin.csproj", "{C0C1C967-EAA0-4CB9-83E7-431348A783CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{BF6321BA-BCED-4E9D-B53D-8CC48F677907}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\release.yml = .github\workflows\release.yml
+		.github\workflows\verify.yml = .github\workflows\verify.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF6321BA-BCED-4E9D-B53D-8CC48F677907} = {3B3AC312-5700-42F0-8379-8DEFBA79C67A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {075C2332-C020-4B6A-B127-D382271363AC}
